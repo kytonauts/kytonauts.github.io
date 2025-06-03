@@ -48,7 +48,6 @@
   <div class="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
 </div>
   <!-- Animated Stars Canvas -->
-  <canvas id="stars-canvas"></canvas>
 
   <!-- Galactic Cloud -->
 <img src="nebula.webp" alt="Galactic Cloud" style="
@@ -70,7 +69,12 @@
   <div class="main-content min-h-[100dvh] flex flex-col items-center justify-center text-center px-4 py-6 gap-6 relative z-10">
     <!-- Logo & Title -->
     <div>
-      <img src="logo.png" alt="Kytonauts Logo" class="mx-auto w-24 h-auto mb-2" style="display:none;"/>
+
+      <div class="glow-wrapper">
+        <div class="glow-circle"></div>
+        <img src="logo.svg" alt="Kytonauts Logo" class="mx-auto w-24 h-auto mb-2 logo" />
+      </div>
+
       <h1 class="text-4xl md:text-6xl font-bold tracking-widest">KYTONAUTS</h1>
    
     </div>

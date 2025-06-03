@@ -40,6 +40,51 @@ body.loaded .main-content {
 overflow: hidden;
 }
 
+
+.glow-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.glow-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(94,74,227,0.25) 0%, rgba(0,0,0,0) 80%);
+  border-radius: 50%;
+  filter: blur(40px);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  animation: pulse-glow 4s infinite ease-in-out;
+}
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.glow-circle {
+  animation: pulse 4s infinite ease-in-out;
+}
+.logo {
+  opacity: 0.4;
+  margin-bottom:30px !important;
+
+    padding: 10px;
+    width: 100px !important;
+    border-radius: 100px;
+    position: relative;
+      z-index: 1;
+}
+
+
     body {
   max-height: 100vh;
   max-height: 100vh;

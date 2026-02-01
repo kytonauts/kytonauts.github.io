@@ -39,8 +39,8 @@
 
         // gradient wzdłuż linii
         const grad = ctx.createLinearGradient(x1, y1, x2, y2);
-        grad.addColorStop(0, `rgba(255, 255, 255, ${l.alpha * 0.8})`); // początek
-        grad.addColorStop(1, `rgba(255, 255, 255, 0)`); // koniec
+    grad.addColorStop(0, `rgba(60, 42, 101, ${l.alpha * 0.35})`);
+grad.addColorStop(1, `rgba(60, 42, 101, 0)`);
 
         ctx.beginPath();
         ctx.strokeStyle = grad;
@@ -105,8 +105,8 @@ window.onload = () => {
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       r: Math.random() * 1.5 + 0.5,
-      opacity: Math.random() * 0.5 + 0.5,
-      delta: Math.random() * 0.005 + 0.001
+   opacity: Math.random() * 0.25 + 0.10,  // było 0.5 + 0.5
+delta: Math.random() * 0.004 + 0.001
     }));
   }
   window.addEventListener('resize', resize);
@@ -121,7 +121,7 @@ window.onload = () => {
     for (const star of stars) {
       ctx.beginPath();
       ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+      ctx.fillStyle = `rgba(60, 42, 101, ${star.opacity * 0.35})`;
       ctx.fill();
       star.opacity += star.delta;
       if (star.opacity >= 1 || star.opacity <= 0.2) star.delta *= -1;

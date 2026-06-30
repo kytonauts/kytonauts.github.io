@@ -1,0 +1,43 @@
+[
+  {
+    "name": "SoundCloud",
+    "url": "https://soundcloud.com/kytonauts",
+    "label": "SoundCloud"
+  },
+  {
+    "name": "Spotify",
+    "url": "https://open.spotify.com/artist/5ooI8jz253aDsmBNqOfXGQ",
+    "label": "Spotify"
+  },
+  {
+    "name": "Deezer",
+    "url": "https://www.deezer.com/en/artist/355556762",
+    "label": "Deezer"
+  },
+  {
+    "name": "Tidal",
+    "url": "https://tidal.com/artist/69659469",
+    "label": "Tidal"
+  },
+  {
+    "name": "Mixcloud",
+    "url": "https://www.mixcloud.com/kytonauts/",
+    "label": "Mixcloud"
+  },
+  {
+    "name": "Instagram",
+    "url": "https://www.instagram.com/kytonauts/",
+    "label": "Instagram"
+  },
+  {
+    "name": "YouTube",
+    "url": "https://www.youtube.com/@kytonauts",
+    "label": "YouTube"
+  },
+  {
+    "name": "YouTube Music",
+    "url": "https://music.youtube.com/@kytonauts",
+    "label": "YouTube Music"
+  }
+  
+]

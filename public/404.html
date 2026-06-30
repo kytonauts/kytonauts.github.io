@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 | KYTONAUTS</title>
+  <meta name="robots" content="noindex" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #111827;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    h1, .logo-text {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    #stars-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    .glow {
+      animation: blink 1.5s infinite;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="stars-canvas"></canvas>
+
+
+ 
+
+
+  <div class="relative z-10 min-h-[100dvh] flex flex-col items-center justify-center text-center px-4">
+    <h1 class="text-6xl md:text-8xl font-bold glow">404</h1>
+    <p class="text-xl md:text-2xl mt-4">This sector of the galaxy is uncharted.</p>
+    <p class="text-md mt-2 opacity-60">The page you’re looking for doesn’t exist.</p>
+    <a href="/" class="mt-6 inline-block border border-white px-6 py-2 text-sm hover:bg-white hover:text-black transition duration-300 rounded-full">Return to Base</a>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('stars-canvas');
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    const stars = Array.from({ length: 120 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.2 + 0.3,
+      opacity: Math.random() * 0.5 + 0.3,
+      delta: Math.random() * 0.004 + 0.001
+    }));
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        ctx.fill();
+        star.opacity += star.delta;
+        if (star.opacity >= 1 || star.opacity <= 0.2) star.delta *= -1;
+      }
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>

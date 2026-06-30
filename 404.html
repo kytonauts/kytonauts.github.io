@@ -5,155 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 | KYTONAUTS</title>
   <meta name="robots" content="noindex" />
-  <meta name="description" content="KYTONAUTS page not found." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root {
-      --bg: #030404;
-      --surface: rgba(13, 15, 16, 0.8);
-      --line: rgba(255, 255, 255, 0.08);
-      --text: rgba(239, 241, 242, 0.96);
-      --muted: rgba(171, 176, 181, 0.72);
-      --accent: #4d95d1;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
     body {
+      background-color: #111827;
+      color: white;
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      min-height: 100%;
-      background:
-        radial-gradient(circle at 50% 18%, rgba(77, 149, 209, 0.08), transparent 20rem),
-        linear-gradient(180deg, #050607 0%, var(--bg) 100%);
-      color: var(--text);
-      font-family: "Inter", sans-serif;
+      padding: 0;
+      overflow: hidden;
     }
 
-    body {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 2rem 1rem;
+    h1, .logo-text {
+      font-family: 'Orbitron', sans-serif;
     }
 
-    .page {
-      width: min(100%, 42rem);
-      padding: 3rem 1.5rem;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      text-align: center;
-      backdrop-filter: blur(10px);
+    #stars-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
     }
 
-    .brand {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      color: inherit;
-      text-decoration: none;
+    @keyframes blink {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
     }
 
-    .brand img {
-      width: 5rem;
-      height: auto;
-      opacity: 0.92;
-    }
-
-    .brand span {
-      font-family: "Orbitron", sans-serif;
-      font-size: clamp(1.7rem, 4vw, 2.35rem);
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .code {
-      margin: 0;
-      font-family: "Orbitron", sans-serif;
-      font-size: clamp(4rem, 10vw, 6rem);
-      line-height: 1;
-      letter-spacing: 0.08em;
-    }
-
-    .title {
-      margin: 1rem 0 0;
-      font-size: clamp(1.1rem, 2.6vw, 1.4rem);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .copy {
-      max-width: 28rem;
-      margin: 0.9rem auto 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.98rem;
-    }
-
-    .actions {
-      display: flex;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 3rem;
-      padding: 0.8rem 1.3rem;
-      border: 1px solid rgba(77, 149, 209, 0.35);
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
-    }
-
-    .button:hover {
-      border-color: rgba(77, 149, 209, 0.62);
-      background: rgba(77, 149, 209, 0.08);
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 640px) {
-      .page {
-        padding: 2.4rem 1.15rem;
-      }
-
-      .brand img {
-        width: 4.5rem;
-      }
+    .glow {
+      animation: blink 1.5s infinite;
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <a class="brand" href="./" aria-label="Back to homepage">
-      <img src="./logo_dark.svg" alt="KYTONAUTS logo" />
-      <span>KYTONAUTS</span>
-    </a>
+  <canvas id="stars-canvas"></canvas>
 
-    <p class="code">404</p>
-    <p class="title">Page not found</p>
-    <p class="copy">
-      The page you are looking for does not exist or has moved.
-      Return to the main site and continue from there.
-    </p>
 
-    <div class="actions">
-      <a class="button" href="./">Return Home</a>
-    </div>
-  </main>
+ 
+
+
+  <div class="relative z-10 min-h-[100dvh] flex flex-col items-center justify-center text-center px-4">
+    <h1 class="text-6xl md:text-8xl font-bold glow">404</h1>
+    <p class="text-xl md:text-2xl mt-4">This sector of the galaxy is uncharted.</p>
+    <p class="text-md mt-2 opacity-60">The page you’re looking for doesn’t exist.</p>
+    <a href="/" class="mt-6 inline-block border border-white px-6 py-2 text-sm hover:bg-white hover:text-black transition duration-300 rounded-full">Return to Base</a>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('stars-canvas');
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    const stars = Array.from({ length: 120 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.2 + 0.3,
+      opacity: Math.random() * 0.5 + 0.3,
+      delta: Math.random() * 0.004 + 0.001
+    }));
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        ctx.fill();
+        star.opacity += star.delta;
+        if (star.opacity >= 1 || star.opacity <= 0.2) star.delta *= -1;
+      }
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
